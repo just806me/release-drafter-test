@@ -14,6 +14,8 @@ categories:
   - title: Other Changes
     labels:
       - "*"
+exclude-labels:
+  - skip-changelog
 autolabeler:
   - label: improvement
     branch:
@@ -24,6 +26,10 @@ autolabeler:
   - label: bug
     branch:
       - '/(bug|fix|bugfix|hotfix)\/.+/'
+  - label: skip-changelog
+    branch:
+      - '/release_.+/'
+      - development
 version-resolver:
   major:
     labels:
@@ -37,3 +43,5 @@ version-resolver:
 template: $CHANGES
 name-template: Sprint $RESOLVED_VERSION
 tag-template: v$RESOLVED_VERSION
+sort-by: merged_at
+sort-direction: ascending
