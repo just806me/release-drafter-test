@@ -1,0 +1,39 @@
+categories:
+  - title: General improvements
+    labels:
+      - improvement
+  - title: New features
+    labels:
+      - feature
+  - title: Bugfixes
+    labels:
+      - bug
+  - title: Dependencies
+    labels:
+      - dependencies
+  - title: Other Changes
+    labels:
+      - "*"
+autolabeler:
+  - label: improvement
+    branch:
+      - '/improvement\/.+/'
+  - label: feature
+    branch:
+      - '/feature\/.+/'
+  - label: bug
+    branch:
+      - '/(bug|fix|bugfix|hotfix)\/.+/'
+version-resolver:
+  major:
+    labels:
+      - improvement
+      - feature
+      - dependencies
+  patch:
+    labels:
+      - bug
+  default: major
+template: $CHANGES
+name-template: Sprint $RESOLVED_VERSION
+tag-template: v$RESOLVED_VERSION
