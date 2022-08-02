@@ -6,6 +6,8 @@ on:
       - development
       - master
   pull_request:
+    branches:
+      - development
     types: [opened, reopened, synchronize]
 
 jobs:
