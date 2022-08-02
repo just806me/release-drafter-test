@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - development
+      - master
   pull_request:
+    branches:
+      - development
     types: [opened, reopened, synchronize]
-
-permissions:
-  contents: read
 
 jobs:
   update_release_draft:
